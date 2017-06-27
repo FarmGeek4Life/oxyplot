@@ -417,7 +417,7 @@ namespace OxyPlot.Wpf
         protected bool IsVisibleToUser()
         {
             var container = this.containerCache;
-            if (container == null)
+            if (container == null || !this.IsDescendantOf(container))
             {
                 container = this.GetRelevantParent<FrameworkElement>(this);
                 if (container != null)
